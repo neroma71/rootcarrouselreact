@@ -24,7 +24,7 @@ export function Contact() {
 
   return (
     <>
-      <h1>Contact</h1>
+      <h2>Contact</h2>
           <img src={images[currentIndex]} alt="" />
           <button className="prev" onClick={retourImage}>
             Précédent

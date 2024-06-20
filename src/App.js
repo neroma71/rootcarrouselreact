@@ -1,57 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import Article from './components/Article';
+import React from 'react';
 import './App.css';
-import { createBrowserRouter, NavLink, Outlet, RouterProvider } from 'react-router-dom';
-import { Blog } from './components/blog';
+import { Routes, Route } from 'react-router-dom';
 import { Home } from './components/home';
+import { Apropos } from './components/services/apropos';
+import { Blog } from './components/blog';
 import { Contact } from './components/contact';
-
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root/>,
-    errorElement: <PageError/>,
-    children: [
-      {
-        path: 'home',
-        element: <Home />
-      },
-      {
-        path: 'blog',
-        element: <Blog />,
-      },
-      {
-        path: 'contact',
-        element: <Contact/>
-      }
-    ]
-  }
-]);
-function PageError (){
-  return <>
-    <h1>Il y a un problème de soucis</h1>
-  </>
-}
-function Root (){
-    return <>
-    <header>
-        <nav>
-          <ul>
-            <li><NavLink to ="/home">home</NavLink></li>
-            <li><NavLink to ="/blog">blog</NavLink></li>
-            <li><NavLink to ="/contact">contact</NavLink></li>
-            </ul>
-        </nav>
-    </header>
-    <div className="container">
-      <Outlet />
-    </div>
-    </>
-}
+import Navbar from './components/Navbar';
+import Marketing from './components/services/marketing/marketing';
+import Developement from './components/services/developement/developement';
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="services/apropos" element={<Apropos />}>
+          <Route path="marketing" element={<Marketing />} />
+          <Route path="developement" element={<Developement />} />
+        </Route>
+        <Route path="blog" element={<Blog />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

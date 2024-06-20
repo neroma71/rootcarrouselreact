@@ -1,13 +1,6 @@
-import { NavLink } from "react-router-dom"
-
-
-export function Home (){
-  
-    const index = 1;
+export function Home(){
     return <>
-    
-       <h1>accueil</h1>
-       <img src={`/img${index}.jpg`} alt="" />
-
+       <h1>Accueil</h1>
+       <h2>Bienvenu sur notre site</h2>
        </>
 }

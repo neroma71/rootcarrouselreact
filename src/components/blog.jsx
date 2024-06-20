@@ -1,9 +1,7 @@
-import { NavLink } from "react-router-dom"
-
 export function Blog (){
   
     return <>
-    
+        <h1>Blog</h1>
         <p className="text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque bibendum cursus consectetur. Nunc sed sagittis nisi. Phasellus quam ipsum, ornare in placerat id, mattis eu nunc. Sed id pharetra neque. Cras risus velit, scelerisque at nisl id, volutpat facilisis magna. Quisque quis viverra ante. Nulla ut dolor nisl. Nunc vitae neque sapien. Vivamus euismod dolor aliquet, porttitor leo quis, condimentum nulla. Nam vestibulum facilisis tellus, quis aliquet lacus viverra eu. Quisque posuere semper fringilla.
 
